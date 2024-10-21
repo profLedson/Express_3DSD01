@@ -1,9 +1,10 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 
 const PORT = 3333; // 65K
-// CRIAÇÃO DAS ROTAS
-//app.use(express.static(__dirname + "public"));
+// CRIAÇÃO DAS ROTAS  - UTILIZAR O MIDDLEWARE
+app.use("/public", express.static(__dirname + "/public"));
 
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/src/views/index.html");
